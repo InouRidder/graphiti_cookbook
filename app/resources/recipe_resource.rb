@@ -3,4 +3,5 @@ class RecipeResource < ApplicationResource
   attribute :cooked, :boolean
   attribute :rating, :integer
   attribute :description, :string
+  attribute :category, :string
 end

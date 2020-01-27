@@ -19,7 +19,7 @@ gem 'responders', '~> 3.0'
 gem 'rack-cors'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
   gem 'rspec-rails', '~> 4.0.0beta2'
   gem 'factory_bot_rails', '~> 5.0'
   gem 'faker', '~> 2.5'
