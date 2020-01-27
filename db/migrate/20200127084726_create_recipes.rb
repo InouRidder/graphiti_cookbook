@@ -5,7 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.boolean :cooked, default: false
       t.integer :rating, default: 0
       t.text :description
-      t.integer :category, default: 0
+      t.references :category
 
       t.timestamps
     end
