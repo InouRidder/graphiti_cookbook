@@ -30,7 +30,11 @@ RSpec.describe RecipeResource, type: :resource do
         data: {
           id: recipe.id.to_s,
           type: 'recipes',
-          attributes: { } # Todo!
+          attributes: {
+            title: 'Updated title',
+            description: 'Updated description',
+            cooked: true
+          }
         }
       }
     end
@@ -39,11 +43,10 @@ RSpec.describe RecipeResource, type: :resource do
       RecipeResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
+    it 'works (add some attributes and enable this spec)' do
       expect {
         expect(instance.update_attributes).to eq(true)
       }.to change { recipe.reload.updated_at }
-      # .and change { recipe.foo }.to('bar') <- example
     end
   end
 

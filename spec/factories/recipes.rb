@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :recipe do
-    title { "MyString" }
+    title { "Taco's" }
     cooked { false }
-    rating { 1 }
-    description { "MyText" }
+    rating { rand(10) }
+    description { "Start by making guacamole. Then add taco's." }
   end
 end

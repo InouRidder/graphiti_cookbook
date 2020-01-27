@@ -14,14 +14,16 @@ RSpec.describe "recipes#update", type: :request do
           id: recipe.id.to_s,
           type: 'recipes',
           attributes: {
-            # ... your attrs here
+            title: 'Updated title',
+            description: 'Updated description',
+            cooked: true
           }
         }
       }
     end
 
-    # Replace 'xit' with 'it' after adding attributes
-    xit 'updates the resource' do
+
+    it 'updates the resource' do
       expect(RecipeResource).to receive(:find).and_call_original
       expect {
         make_request
