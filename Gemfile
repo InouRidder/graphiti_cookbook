@@ -16,7 +16,7 @@ gem 'vandal_ui'
 gem 'kaminari', '~> 1.1'
 gem 'responders', '~> 3.0'
 
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
