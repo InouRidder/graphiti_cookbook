@@ -2,8 +2,8 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
   def change
     create_table :recipes do |t|
       t.string :title
-      t.boolean :cooked
-      t.integer :rating
+      t.boolean :cooked, default: false
+      t.integer :rating, default: 0
       t.text :description
 
       t.timestamps

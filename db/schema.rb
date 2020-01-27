@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2020_01_27_084726) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "title"
-    t.boolean "cooked"
-    t.integer "rating"
+    t.boolean "cooked", default: false
+    t.integer "rating", default: 0
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
