@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let(:recipe) { build(:recipe) }
+
   let(:test_rating) {
     ->(attributes) {
       recipe.update(attributes)

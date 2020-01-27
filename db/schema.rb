@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_084726) do
     t.boolean "cooked", default: false
     t.integer "rating", default: 0
     t.text "description"
+    t.integer "category", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -9,7 +9,8 @@ puts 'Creating 100 recipes'
     title: Faker::Food.dish,
     description: Faker::Food.description,
     cooked: [true, false].sample,
-    rating: rand(100)
+    rating: rand(100),
+    category: Recipe::CATEGORIES.sample
   )
 end
 
