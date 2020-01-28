@@ -3,5 +3,13 @@ class RecipeResource < ApplicationResource
   attribute :cooked, :boolean
   attribute :rating, :integer
   attribute :description, :string
-  attribute :category, :string
+
+  belongs_to :category, link: false
+
+  def base_scope
+    Recipe.order(created_at: :desc)
+  end
+
+
+
 end
