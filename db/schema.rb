@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_27_153252) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_153252) do
     t.boolean "cooked", default: false
     t.integer "rating", default: 0
     t.text "description"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_recipes_on_category_id"

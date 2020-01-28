@@ -15,7 +15,10 @@ class Recipe < ApplicationRecord
     greater_than_or_equal_to: 0
   }
 
-  enum category: Category.all.pluck(:name), _scopes: false
+  TEXT_QUERY = "recipes.title @@ :query OR recipes.description @@ :query OR categories.name @@ :query"
+
+  scope :search_by_text, ->(query) { joins(:category).where(TEXT_QUERY, query: query) }
+
 
   def cooked!
     return true if cooked?
