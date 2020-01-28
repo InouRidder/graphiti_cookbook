@@ -91,12 +91,6 @@
           "readable": true,
           "writable": true,
           "description": null
-        },
-        "category": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
         }
       },
       "extra_attributes": {
@@ -111,8 +105,6 @@
         "rating": {
         },
         "description": {
-        },
-        "category": {
         }
       },
       "filters": {
@@ -175,7 +167,7 @@
             "not_match"
           ]
         },
-        "category": {
+        "text_includes": {
           "type": "string",
           "operators": [
             "eq",
@@ -192,6 +184,11 @@
         }
       },
       "relationships": {
+        "category": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "CategoryResource"
+        }
       }
     }
   ],
