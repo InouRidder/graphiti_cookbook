@@ -38,11 +38,11 @@ RSpec.describe RecipeResource, type: :resource do
           params[:sort] = 'id'
         end
 
-        it 'works' do
+        it 'returns descending, as the base scope is newest first' do
           render
           expect(d.map(&:id)).to eq([
-            recipe1.id,
-            recipe2.id
+            recipe2.id,
+            recipe1.id
           ])
         end
       end

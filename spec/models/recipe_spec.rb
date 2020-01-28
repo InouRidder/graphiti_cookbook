@@ -10,6 +10,26 @@ RSpec.describe Recipe, type: :model do
     }
   }
 
+  describe '.search_by_text' do
+    it 'should return recipes of which the title or description match the text' do
+      recipe = create(:recipe, title: 'taco', category: create(:category, name: 'mexican'))
+
+      expect(Recipe.search_by_text('taco')).to include(recipe)
+    end
+
+    it 'should return recipes whose category match the query' do
+      recipe = create(:recipe, title: 'taco', category: create(:category, name: 'mexican'))
+
+      expect(Recipe.search_by_text('mexican')).to include(recipe)
+    end
+
+    it 'should not return recipes that do not match the query' do
+      recipe = create(:recipe, title: 'taco', category: create(:category, name: 'mexican'))
+
+      expect(Recipe.search_by_text('lentils')).not_to include(recipe)
+    end
+  end
+
   describe '#cooked!' do
     it 'should update the cooked status' do
       recipe.cooked!
