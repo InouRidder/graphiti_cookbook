@@ -16,7 +16,7 @@ gem 'pg'
 gem 'graphiti'
 gem 'graphiti-rails'
 gem 'vandal_ui'
-gem 'kaminari', '~> 1.1'
+gem 'kaminari', '~> 1.2'
 gem 'responders', '~> 3.0'
 
 gem 'rack-cors'
